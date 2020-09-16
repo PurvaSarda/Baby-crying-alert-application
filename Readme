@@ -6,6 +6,6 @@ The model will be initially fed with the various images of the baby like crying,
 A cctv camera will continuously monitor the baby activity and feed the video to the application. The algorithm behind the application will analyse the video feed sent by the camera and look for any crying gesture of the baby.
 Detecting a crying gesture triggers an event that can send a message to an application or alert the user.
 
-Benefits:
+Benefits of the application:
 There are various apps which give the live footage from the cctv camera however, as a working professional,it becomes difficult to continuously monitor the live feed.  Baby crying alert application will help alot to provide a timely notification about the baby’s crying gesture.
 This app will provide a sense of security for new working mothers.As per the notification from the application, caretaker at the home could also be intimated about the baby’s crying activity.
