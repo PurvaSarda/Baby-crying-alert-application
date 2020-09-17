@@ -14,3 +14,8 @@ Detecting a crying gesture triggers an event that can send a message to an appli
 
 There are various apps which give the live footage from the cctv camera however, as a working professional,it becomes difficult to continuously monitor the live feed.  Baby crying alert application will help alot to provide a timely notification about the baby’s crying gesture.
 This app will provide a sense of security for new working mothers.As per the notification from the application, caretaker at the home could also be intimated about the baby’s crying activity.
+
+
+##Image :
+
+![alt text](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freegreatpicture.com%2Fchildrens-album%2Fcute-baby-31550&psig=AOvVaw13It3BPsGwGGlF6r014CdH&ust=1600410104193000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMiqtrDG7-sCFQAAAAAdAAAAABAS)
