@@ -18,4 +18,4 @@ This app will provide a sense of security for new working mothers.As per the not
 
 ## Image :
 
-![alt text]<img src="D:\Git\Cute-baby.jpg">
+![Cute-baby](https://user-images.githubusercontent.com/26758601/93588120-9235db80-f9c8-11ea-9077-e4452a3207fe.jpg)
