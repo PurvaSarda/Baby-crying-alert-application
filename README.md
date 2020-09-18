@@ -18,4 +18,4 @@ This app will provide a sense of security for new working mothers.As per the not
 
 ## Image :
 
-![Alt text](D:\Git\Cute-baby.jpg?raw=true "Baby Image")
+![Alt text](<img src="D:\Git\Cute-baby.jpg">)
