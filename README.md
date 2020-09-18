@@ -18,4 +18,4 @@ This app will provide a sense of security for new working mothers.As per the not
 
 ## Image :
 
-![alt text]<img src = "Cute-baby.jpg">
+<img src = "Cute-baby.jpg">
