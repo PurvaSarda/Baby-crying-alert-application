@@ -23,16 +23,17 @@ def video_details(inputFile,outputFile):
         counter += 1
         #print("Counter : ",counter)
         #print(ret)
-        if ret:
+        try:
             #Resizing the frame
             frame = cv2.resize(frame,dim, fx = 0, fy = 0, 
                                 interpolation = cv2.INTER_CUBIC) 
             out.write(frame)
             # Display the resulting frame 
             #cv2.imshow('Frame', frame)  
-        else:
-            #print("Failure")
-            break   
+        except Exception as e:
+          print (str(e)) 
+          #print("Failure")
+          break   
 
         # define q as the exit button 
         if cv2.waitKey(1) & 0xFF == ord('q'): 
