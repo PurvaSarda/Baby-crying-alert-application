@@ -40,19 +40,17 @@ def video_details(inputFile,outputFile):
                   
 
       details = [totalFrames,durationOfEachFrame,originalResolution,resizedResolution]
-      error = [False,"Some issue with the frames"]
+      error = [False]
       return details,error
 
     except Exception as e:
-      return _,True,e 
-
-
-if __name__ == "__main__":
-
-    inputFile = "/content/file_example_MP4_480_1_5MG.mp4"
-    outputFile = "Output.mp4"
+        error = [True,e]
+        return None ,error
+    
+def resize_video(inputFile,outputFile):
 
     videoDetails,error= video_details(inputFile,outputFile)
+    #print(videoDetails,error)
 
     if not error[0]:
       print("Success!!! output saved as",outputFile)
@@ -63,3 +61,9 @@ if __name__ == "__main__":
       print("resized Resolution:",videoDetails[3]) 
     else:
         print("Error :",error[1])
+        
+
+
+
+
+
