@@ -40,7 +40,8 @@ def video_details(inputFile,outputFile):
                   
 
       details = [totalFrames,durationOfEachFrame,originalResolution,resizedResolution]
-      return details,False
+      error = [False,"Some issue with the frames"]
+      return details,error
 
     except Exception as e:
       return _,True,e 
@@ -53,11 +54,12 @@ if __name__ == "__main__":
 
     videoDetails,error= video_details(inputFile,outputFile)
 
-    if not error:
+    if not error[0]:
       print("Success!!! output saved as",outputFile)
       print("\nDetails:")
       print("Total frames:",videoDetails[0])
       print("Duration of each frame {:.3f} ms".format(videoDetails[1]))
       print("original Resolution:",videoDetails[2])
       print("resized Resolution:",videoDetails[3]) 
-
+    else:
+        print("Error :",error[1])
