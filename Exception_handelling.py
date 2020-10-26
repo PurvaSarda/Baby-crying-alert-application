@@ -32,7 +32,7 @@ def video_details(inputFile,outputFile):
 
           # define q as the exit button 
           if cv2.waitKey(1) & 0xFF == ord('q'): 
-              break
+            break
       cap.release() 
       out.release()
       # Closes all the windows currently opened. 
@@ -47,6 +47,22 @@ def video_details(inputFile,outputFile):
         error = [True,e]
         return None ,error
     
+    
+def image_details(inputFile_img,outputFile_img,image):
+    try:
+        if image:
+          img = cv2.imread(inputFile_img) 
+          resized_image = cv2.resize(img, (0, 0), fx = 0.5, fy = 0.5)
+          cv2.imwrite(outputFile_img, resized_image)  
+          cv2.waitKey(0) 
+          cv2.destroyAllWindows() 
+          error = [False]   
+        return outputFile_img, error
+     
+    except Exception as e:
+        error = [True,e]
+        return None, error
+    
 def resize_video(inputFile,outputFile):
 
     videoDetails,error= video_details(inputFile,outputFile)
@@ -60,7 +76,32 @@ def resize_video(inputFile,outputFile):
       print("original Resolution:",videoDetails[2])
       print("resized Resolution:",videoDetails[3]) 
     else:
-        print("Error :",error[1])
+        print("Error while saving video :",error[1])
+
+        
+def resize_img(inputFile_img,outputFile_img,image):
+    
+    resized_output_image,error = image_details(inputFile_img,outputFile_img,image)
+    
+    if not error[0]:
+        print("\nImage details:")
+        print("Success!!! Image output saved as",outputFile_img)
+    else:
+      print("\nImage details:")
+      print("Error while saving image : ",error[1])
+        
+        
+if __name__ == "__main__":
+    
+
+    inputFile = "D:\Git\Baby crying alert application\VID_20190611_100612.mp4"
+    outputFile = "Output.mp4"
+    image = True
+    inputFile_img = "D:\Git\Baby crying alert application\Cute-baby.jpg"
+    outputFile_img = "Output.jpg"
+    
+    resize_video(inputFile,outputFile)
+    resize_img(inputFile_img,outputFile_img,image)
         
 
 
