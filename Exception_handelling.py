@@ -48,60 +48,49 @@ def video_details(inputFile,outputFile):
         return None ,error
     
     
-def image_details(inputFile_img,outputFile_img,image):
+def image_details(inputFile,outputFile):
     try:
-        if image:
-          img = cv2.imread(inputFile_img) 
-          resized_image = cv2.resize(img, (0, 0), fx = 0.5, fy = 0.5)
-          cv2.imwrite(outputFile_img, resized_image)  
-          cv2.waitKey(0) 
-          cv2.destroyAllWindows() 
-          error = [False]   
-        return outputFile_img, error
+        img = cv2.imread(inputFile) 
+        resized_image = cv2.resize(img, (0, 0), fx = 0.5, fy = 0.5)
+        cv2.imwrite(outputFile, resized_image)  
+        cv2.waitKey(0) 
+        cv2.destroyAllWindows() 
+        error = [False]   
+        return outputFile, error
      
     except Exception as e:
         error = [True,e]
         return None, error
-    
-def resize_video(inputFile,outputFile):
+   
 
-    videoDetails,error= video_details(inputFile,outputFile)
-    #print(videoDetails,error)
-
-    if not error[0]:
-      print("Success!!! output saved as",outputFile)
-      print("\nDetails:")
-      print("Total frames:",videoDetails[0])
-      print("Duration of each frame {:.3f} ms".format(videoDetails[1]))
-      print("original Resolution:",videoDetails[2])
-      print("resized Resolution:",videoDetails[3]) 
+        
+def resize(inputFile,outputFile,image):
+    if image:
+        resized_output_image,error = image_details(inputFile,outputFile)
+        #print("Inside Image func")
+        if not error[0]:
+            print("\nImage details:")
+            print("Success!!! Image output saved as",outputFile)
+        else:
+            print("\nImage details:")
+            print("Error while saving image : ",error[1])
     else:
-        print("Error while saving video :",error[1])
+        videoDetails,error= video_details(inputFile,outputFile)
+        #print(videoDetails,error)
 
-        
-def resize_img(inputFile_img,outputFile_img,image):
-    
-    resized_output_image,error = image_details(inputFile_img,outputFile_img,image)
-    
-    if not error[0]:
-        print("\nImage details:")
-        print("Success!!! Image output saved as",outputFile_img)
-    else:
-      print("\nImage details:")
-      print("Error while saving image : ",error[1])
+        if not error[0]:
+            print("Success!!! Video output saved as",outputFile)
+            print("\nDetails:")
+            print("Total frames:",videoDetails[0])
+            print("Duration of each frame {:.3f} ms".format(videoDetails[1]))
+            print("original Resolution:",videoDetails[2])
+            print("resized Resolution:",videoDetails[3]) 
+        else:
+            print("Error while saving video :",error[1])
         
         
-if __name__ == "__main__":
-    
+        
 
-    inputFile = "D:\Git\Baby crying alert application\VID_20190611_100612.mp4"
-    outputFile = "Output.mp4"
-    image = True
-    inputFile_img = "D:\Git\Baby crying alert application\Cute-baby.jpg"
-    outputFile_img = "Output.jpg"
-    
-    resize_video(inputFile,outputFile)
-    resize_img(inputFile_img,outputFile_img,image)
         
 
 
